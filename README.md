@@ -127,6 +127,14 @@ cd echogpt-backend
 npm install
 ```
 
+## Installed Packages
+
+Install the project dependencies:
+
+```bash
+npm install @anthropic-ai/sdk @google/genai @nestjs/common@^12 @nestjs/config@^12 @nestjs/core@^12 @nestjs/jwt@^12 @nestjs/passport@^12 @nestjs/platform-express@^12 @nestjs/swagger@^12 @nestjs/throttler@^7 @prisma/client@^6 bcrypt class-transformer class-validator helmet openai passport passport-jwt reflect-metadata rxjs zod && npm install -D @nestjs/cli@^12 @nestjs/schematics@^12 @types/bcrypt @types/express@^5 @types/node@^24 @types/passport-jwt prisma@^6 prettier source-map-support ts-node tsconfig-paths typescript@^6
+
+```
 ### 3. Configure environment
 
 Copy the example env file:
