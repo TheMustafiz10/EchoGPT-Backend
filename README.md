@@ -18,8 +18,6 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 - [Testing the API](#-testing-the-api)
 - [Available Scripts](#-available-scripts)
 - [Security Notes](#-security-notes)
-- [Troubleshooting](#-troubleshooting)
-- [License](#-license)
 
 ---
 
