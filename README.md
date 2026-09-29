@@ -47,7 +47,7 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 - Refresh token rotation (secure session management)
 - Password hashing with bcrypt (cost factor 12)
 - Secure logout (per-session invalidation)
-- Optional email verification flow
+- Optional email verification flow (Not Implemented curently)
 
 ### 2. User Management
 - View and update profile
