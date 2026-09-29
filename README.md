@@ -4,7 +4,7 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Tech Stack](#-tech-stack)
 - [Features](#-features)
