@@ -102,7 +102,7 @@ Before one begin, ensure one should have:
   - Docker (no manual Postgres install needed)
 - **Git**
 
-Verify your environment:
+Verify the environment:
 
 ```bash
 node -v      # v20.x.x or v22.x.x
@@ -143,7 +143,7 @@ Open `.env` and fill in the required values. See [Environment Variables](#-envir
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-### 4. Set up the database
+### 4. Setting up the database
 
 If using **Supabase**:
 - Create a project at [supabase.com](https://supabase.com)
