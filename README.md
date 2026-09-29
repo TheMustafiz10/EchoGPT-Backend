@@ -377,7 +377,7 @@ echogpt-backend/
 ├── README.md
 │
 ├── docs/
-│   └── openapi.json                 # Exported OpenAPI spec (optional)
+│   └── openapi.json                 # Exported OpenAPI spec (Not Implemented)
 │
 ├── prisma/
 │   ├── schema.prisma                # Data model
@@ -499,7 +499,7 @@ Copy the `accessToken` from the response.
 
 ### Step 2 — Authorize Swagger
 
-Click **🔒 Authorize** → paste the token → **Authorize**.
+Click **Authorize** → paste the token → **Authorize**.
 
 ### Step 3 — Promote yourself to ADMIN
 
