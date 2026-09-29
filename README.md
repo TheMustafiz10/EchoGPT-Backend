@@ -167,13 +167,7 @@ npx prisma migrate dev --name init
 npm run start:dev
 ```
 
-One should see:
 
-```
-[Nest] ... LOG [NestApplication] Nest application successfully started
-[Nest] ... LOG [Bootstrap] Application is running on: http://localhost:3000
-[Nest] ... LOG [Bootstrap] Swagger docs available at: http://localhost:3000/api
-```
 
 ### 7. Open Swagger UI
 
