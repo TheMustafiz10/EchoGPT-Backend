@@ -101,7 +101,7 @@ Before you begin, ensure you have:
 - **PostgreSQL 16+** — either:
   - A [Supabase](https://supabase.com) account (free tier works), or
   - A local Postgres install, or
-  - Docker (recommended — no manual Postgres install needed)
+  - Docker (no manual Postgres install needed)
 - **Git**
 
 Verify your environment:
