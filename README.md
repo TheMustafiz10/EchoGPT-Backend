@@ -23,7 +23,7 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 | :--- | :--- |
@@ -39,7 +39,7 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 
 ---
 
-## ✨ Features
+## Features
 
 ### 1. Authentication
 - User registration with email + password
@@ -288,11 +288,10 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
 Run it **twice** to get two different values for the two JWT secrets, and a third time for `ENCRYPTION_KEY`.
 
-⚠️ **Never commit `.env` to Git.** It's already in `.gitignore`.
 
 ---
 
-## 🗄 Database Migrations
+## Database Migrations
 
 Migration files live in `prisma/migrations/`. They are the source of truth for the database schema.
 
@@ -314,7 +313,7 @@ npx prisma migrate dev --name add_your_change
 npx prisma migrate deploy
 ```
 
-### Reset the database (⚠️ deletes all data)
+### Reset the database 
 
 ```bash
 npx prisma migrate reset
@@ -330,7 +329,7 @@ Opens at [http://localhost:5555](http://localhost:5555).
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 Swagger UI is auto-generated from your controllers and DTOs.
 
@@ -360,17 +359,19 @@ curl http://localhost:3000/api-json > docs/openapi.json
 | `search` | Query, history, recent, suggestions |
 | `admin` | Dashboard, users, subscriptions, analytics, logs, health |
 
+
+
 ### Authentication in Swagger
 
 1. Call `POST /auth/register` or `POST /auth/login`
 2. Copy the `accessToken` from the response
-3. Click **🔒 Authorize** at the top-right of Swagger
+3. Click **Authorize** at the top-right of Swagger
 4. Paste the token → **Authorize** → **Close**
-5. All 🔒 endpoints now include the token automatically
+5. All endpoints now include the token automatically
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 echogpt-backend/
@@ -492,7 +493,7 @@ echogpt-backend/
 
 ---
 
-## 🧪 Testing the API
+## Testing the API
 
 ### Step 1 — Register a user
 
@@ -573,7 +574,7 @@ Run it twice — the second response will have `"cached": true`.
 
 ---
 
-## 📜 Available Scripts
+## Available Scripts
 
 | Script | Purpose |
 | :--- | :--- |
@@ -587,7 +588,7 @@ Run it twice — the second response will have `"cached": true`.
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 
 This project implements several security best practices:
 
@@ -614,32 +615,7 @@ This project implements several security best practices:
 
 ---
 
-## 🐛 Troubleshooting
-
-| Symptom | Cause | Fix |
-| :--- | :--- | :--- |
-| `@prisma/client did not initialize yet` | Prisma Client not generated | `npx prisma generate` |
-| `P1000: Authentication failed` | Wrong DB password / unencoded chars | URL-encode special chars in `DATABASE_URL` |
-| `P1001: Can't reach database server` | DB down / wrong host | Check Supabase status or start local Postgres |
-| `P3005: The database schema is not empty` | Existing tables | `npx prisma migrate reset` (⚠️ deletes data) |
-| `Joi.string is not a function` | Old Joi-based env validation | Switch to Zod schema in `config/env.validation.ts` |
-| `No command registered for 'generate'` | `npx` pulled Prisma 8 RC | `npx prisma@6 generate` or install `prisma@^6` locally |
-| `401 Unauthorized` on protected endpoints | Missing / expired token | Re-login, re-authorize in Swagger |
-| `403 Forbidden` on `/admin/*` | Not an ADMIN | Promote via Prisma Studio, then re-login |
-| `502 AI provider error` | Invalid provider API key | Verify key with `curl` before adding |
-| `docker: command not found` | Docker Desktop not installed | [Install Docker Desktop](https://www.docker.com/products/docker-desktop/) |
-| `Cannot connect to the Docker daemon` | Docker Desktop not running | Launch Docker Desktop, wait for whale icon |
-| `CORS error` in browser | Origin not allowed | Add your extension origin to `CORS_ORIGIN` |
-
----
-
-## 📄 License
-
-MIT — see [LICENSE](LICENSE) for details.
-
----
-
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [NestJS](https://nestjs.com/)
 - [Prisma](https://www.prisma.io/)
@@ -649,4 +625,3 @@ MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
-**Built for the EchoGPT Chrome Extension.**
