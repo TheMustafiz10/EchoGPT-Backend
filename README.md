@@ -94,7 +94,7 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 
 ## Prerequisites
 
-Before one begin, ensure you have:
+Before one begin, ensure one should have:
 
 - **Node.js 20+** (22 LTS recommended) — [Download](https://nodejs.org/)
 - **npm 10+** (bundled with Node)
