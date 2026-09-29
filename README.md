@@ -92,9 +92,9 @@ Production-ready REST API backend for the **EchoGPT Chrome Extension**, built wi
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
-Before you begin, ensure you have:
+Before one begin, ensure you have:
 
 - **Node.js 20+** (22 LTS recommended) — [Download](https://nodejs.org/)
 - **npm 10+** (bundled with Node)
@@ -114,7 +114,7 @@ git --version
 
 ---
 
-## 🚀 Quick Start (Local)
+## Quick Start (Local)
 
 ### 1. Clone the repository
 
@@ -169,12 +169,12 @@ npx prisma migrate dev --name init
 npm run start:dev
 ```
 
-You should see:
+One should see:
 
 ```
 [Nest] ... LOG [NestApplication] Nest application successfully started
-[Nest] ... LOG [Bootstrap] 🚀 Application is running on: http://localhost:3000
-[Nest] ... LOG [Bootstrap] 📚 Swagger docs available at: http://localhost:3000/api
+[Nest] ... LOG [Bootstrap] Application is running on: http://localhost:3000
+[Nest] ... LOG [Bootstrap] Swagger docs available at: http://localhost:3000/api
 ```
 
 ### 7. Open Swagger UI
@@ -185,7 +185,7 @@ Navigate to [http://localhost:3000/api](http://localhost:3000/api) in your brows
 
 ## 🐳 Docker Setup
 
-Docker runs your app + Postgres in isolated containers — no manual installation needed.
+Docker runs in the app + Postgres in isolated containers — no manual installation needed.
 
 ### Prerequisites
 
