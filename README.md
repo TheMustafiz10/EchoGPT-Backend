@@ -331,12 +331,8 @@ Swagger UI is auto-generated from your controllers and DTOs.
 - **Raw OpenAPI JSON:** [http://localhost:3000/api-json](http://localhost:3000/api-json)
 - **Raw OpenAPI YAML:** [http://localhost:3000/api-yaml](http://localhost:3000/api-yaml)
 
-### Export the OpenAPI spec (for submission)
 
-```bash
-mkdir -p docs
-curl http://localhost:3000/api-json > docs/openapi.json
-```
+
 
 ### API Tag Overview
 
