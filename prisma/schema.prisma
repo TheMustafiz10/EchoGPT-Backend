@@ -1,0 +1,116 @@
+
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Plan {
+  FREE
+  PREMIUM
+}
+
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  password      String
+  name          String?
+  role          Role           @default(USER)
+  emailVerified Boolean        @default(false)
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  subscription  Subscription?
+  refreshTokens RefreshToken[]
+  chatHistories ChatHistory[]
+  webSearches   WebSearch[]
+  apiUsageLogs  ApiUsageLog[]
+}
+
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Subscription {
+  id            String   @id @default(uuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan          Plan     @default(FREE)
+  requestsUsed  Int      @default(0)
+  requestsLimit Int      @default(10)
+  startsAt      DateTime @default(now())
+  endsAt        DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model AiProvider {
+  id           String        @id @default(uuid())
+  name         String
+  providerType String
+  apiKey       String
+  baseUrl      String?
+  enabled      Boolean       @default(true)
+  isDefault    Boolean       @default(false)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  chatHistories ChatHistory[]
+}
+
+model ChatHistory {
+  id         String     @id @default(uuid())
+  userId     String
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  providerId String
+  provider   AiProvider @relation(fields: [providerId], references: [id])
+  prompt     String
+  response   String
+  tokensUsed Int?
+  createdAt  DateTime   @default(now())
+}
+
+
+model WebSearch {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  query     String
+  results   Json?
+  cached    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([query, createdAt])
+}
+
+
+
+
+
+model ApiUsageLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  endpoint   String
+  method     String
+  statusCode Int
+  durationMs Int
+  createdAt  DateTime @default(now())
+}
