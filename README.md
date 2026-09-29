@@ -264,7 +264,7 @@ Copy `.env.example` to `.env` and configure:
 
 | Variable | Required | Description | Example |
 | :--- | :--- | :--- | :--- |
-| `DATABASE_URL` | ✅ | PostgreSQL connection string | `postgresql://postgres:postgres@localhost:5432/echogpt?schema=public` |
+| `DATABASE_URL` | ✅ | PostgreSQL connection string (Using Supabase | `postgresql://postgres.[PROJECT-REF]:[YOUR-PASSWORD]@aws-0-[REGION].pooler.supabase.com:5432/postgres` |
 | `JWT_ACCESS_SECRET` | ✅ | Random 64-char hex — signs access tokens | `<64-char hex>` |
 | `JWT_REFRESH_SECRET` | ✅ | Random 64-char hex (different) — signs refresh tokens | `<64-char hex>` |
 | `JWT_ACCESS_EXPIRATION` | ✅ | Access token lifetime | `15m` |
@@ -278,6 +278,7 @@ Copy `.env.example` to `.env` and configure:
 | `SMTP_USER` | ⬜ | Optional | `you@gmail.com` |
 | `SMTP_PASS` | ⬜ | Optional — Gmail App Password | `abcd efgh ijkl mnop` |
 | `APP_URL` | ⬜ | Optional — used in emails | `http://localhost:3000` |
+| `DATABASE_URL` | ✅ | PostgreSQL connection string (If using Dcoker)| `postgresql://postgres:postgres@localhost:5432/echogpt?schema=public` |
 
 **Generate secrets:**
 
