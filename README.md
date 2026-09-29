@@ -183,7 +183,7 @@ Navigate to [http://localhost:3000/api](http://localhost:3000/api) in your brows
 
 ---
 
-## 🐳 Docker Setup
+## Docker Setup
 
 Docker runs in the app + Postgres in isolated containers — no manual installation needed.
 
@@ -209,7 +209,7 @@ docker compose up --build
 ```
 
 **What happens:**
-1. Builds your NestJS app image (installs deps, generates Prisma client, compiles TypeScript)
+1. Builds the NestJS app image (installs deps, generates Prisma client, compiles TypeScript)
 2. Starts a Postgres 16 container
 3. Waits for Postgres healthcheck to pass
 4. Runs `prisma migrate deploy` inside the API container
@@ -258,7 +258,7 @@ Docker Compose overrides `DATABASE_URL` to point at the **containerized Postgres
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Copy `.env.example` to `.env` and configure:
 
